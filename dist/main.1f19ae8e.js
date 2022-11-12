@@ -3914,9 +3914,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 loadSprite("bean", "sprites/bean.png");
 loadSprite("ground", "sprites/ground.png");
 // add a character to screen
-add([
+var player = add([
 // list of components
-sprite("bean"), pos(80, 40), area()]);
+sprite("bean"), pos(80, 40), area(), body()]);
+var MOVE_SPEAD = 200;
+
+// player movement
+onKeyDown("left", function () {
+  player.move(-MOVE_SPEAD, 0);
+});
+onKeyDown("right", function () {
+  player.move(MOVE_SPEAD, 0);
+});
+
+// maps
+
 addLevel(['          ', '          ', 'xxxxxxxxxx'], {
   width: 31,
   height: 100,
