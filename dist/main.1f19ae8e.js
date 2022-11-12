@@ -3940,7 +3940,7 @@ onKeyPress("w", function () {
 
 // maps
 
-addLevel(['          ', '          ', 'xxxxxxxxxx'], {
+addLevel(['                    ', '                    ', '              xxx   ', '       xxx          ', '  xxxxxxxxxxxx      '], {
   width: 31,
   height: 100,
   "x": function x() {

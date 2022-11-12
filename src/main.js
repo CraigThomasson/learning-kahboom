@@ -40,9 +40,11 @@ onKeyPress("w", () => {
 // maps
 
 addLevel([
-'          ',
-'          ',
-'xxxxxxxxxx',
+'                    ',
+'                    ',
+'              xxx   ',
+'       xxx          ',
+'  xxxxxxxxxxxx      ',
 ], {
 width: 31,
 height: 100,
