@@ -3910,7 +3910,13 @@ exports.default = no;
 
 var _kaboom = _interopRequireDefault(require("kaboom"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-(0, _kaboom.default)();
+(0, _kaboom.default)({
+  width: 700,
+  height: 700,
+  font: "sinko",
+  canvas: document.querySelector("#mycanvas"),
+  background: [0, 0, 255]
+});
 loadSprite("bean", "sprites/bean.png");
 loadSprite("ground", "sprites/ground.png");
 // add a character to screen
@@ -3920,11 +3926,16 @@ sprite("bean"), pos(80, 40), area(), body()]);
 var MOVE_SPEAD = 200;
 
 // player movement
-onKeyDown("left", function () {
+onKeyDown("a", function () {
   player.move(-MOVE_SPEAD, 0);
 });
-onKeyDown("right", function () {
+onKeyDown("d", function () {
   player.move(MOVE_SPEAD, 0);
+});
+onKeyPress("w", function () {
+  if (player.isGrounded()) {
+    player.jump();
+  }
 });
 
 // maps

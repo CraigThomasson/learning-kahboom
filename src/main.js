@@ -1,6 +1,12 @@
 import kaboom from 'kaboom'
 
-kaboom()
+kaboom({
+    width: 700,
+    height: 700,
+    font: "sinko",
+    canvas: document.querySelector("#mycanvas"),
+    background: [ 0, 0, 255, ],
+})
 
 loadSprite("bean", "sprites/bean.png")
 loadSprite("ground", "sprites/ground.png")
@@ -17,12 +23,18 @@ const MOVE_SPEAD = 200
 
 
 // player movement
-onKeyDown("left", () => {
+onKeyDown("a", () => {
     player.move(-MOVE_SPEAD, 0)
 })
 
-onKeyDown("right", () => {
+onKeyDown("d", () => {
     player.move(MOVE_SPEAD, 0)
+})
+
+onKeyPress("w", () => {
+    if(player.isGrounded()) {
+        player.jump()
+    }
 })
 
 // maps
