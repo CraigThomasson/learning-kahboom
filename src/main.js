@@ -5,7 +5,7 @@ kaboom({
     height: 700,
     font: "sinko",
     canvas: document.querySelector("#mycanvas"),
-    background: [ 0, 0, 255, ],
+    background: [ 15, 33, 12, ],
 })
 
 loadSprite("bean", "sprites/bean.png")
@@ -23,6 +23,10 @@ const MOVE_SPEAD = 200
 
 
 // player movement
+player.onUpdate(() => {
+    camPos(player.pos)
+})
+
 onKeyDown("a", () => {
     player.move(-MOVE_SPEAD, 0)
 })
@@ -42,6 +46,12 @@ onKeyPress("w", () => {
 addLevel([
 '                    ',
 '                    ',
+'              xxx   ',
+'       xxx          ',
+'              xxx   ',
+'       xxx          ',
+'              xxx   ',
+'       xxx          ',
 '              xxx   ',
 '       xxx          ',
 '  xxxxxxxxxxxx      ',
